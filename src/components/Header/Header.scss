@@ -60,6 +60,9 @@
 
         h1 {
             font-size: 3rem;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-delay: .3s;
         }
 
         p {
@@ -67,6 +70,9 @@
             max-width: 600 px;
             margin: 20px 0 30px;
             font-weight: 400;
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            animation-delay: .3s;
         }
 
         &:before {
@@ -82,4 +88,31 @@
     }
 .header * {
     z-index: 1;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }

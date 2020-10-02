@@ -1,6 +1,7 @@
 import React from "react";
-
+import Button from "../Button/Button"
 import "./Header.scss"
+
 
 const Header = () => {
     return ( 
@@ -18,7 +19,7 @@ const Header = () => {
         <div className="content">
             <h1>Odkryj niezwykłą muzyczną aplikację</h1>
             <p>Stwórz swoją mapę koncertowych wspomnień.</p>
-            <a href="#about" className="btn"><i className="fas fa-chevron-right"></i></a>
+            <Button text="Rozpocznij"/>
         </div>
     </header>
     </>

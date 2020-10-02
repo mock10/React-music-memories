@@ -1,0 +1,39 @@
+.btn {
+   
+    background-color: transparent;
+    color:#FFE4C4;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-family: 'Source Serif Pro', serif;
+    border: 1px solid white;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+        color: #000000;
+        background-color: #FFE4C4;
+        opacity: 0.5;
+    }
+  }
+
+  .btn-animated {
+      animation-name: moveInBottom;
+      animation-duration: 1s;
+      animation-fill-mode: backwards;
+      animation-delay: .85s;
+  }
+
+  @keyframes moveInBottom {
+      0% {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      100% {
+          opacity: 1;
+          transform: translate(0);
+      }
+  }
+
