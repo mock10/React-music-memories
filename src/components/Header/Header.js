@@ -16,11 +16,10 @@ const Header = () => {
                 </ul>
             </nav>
         </div>
-        <div className="content">
+        {/* <div className="content">
             <h1>Odkryj niezwykłą muzyczną aplikację</h1>
             <p>Stwórz swoją mapę koncertowych wspomnień.</p>
-            <Button text="Rozpocznij"/>
-        </div>
+        </div> */}
     </header>
     </>
 )

@@ -1,0 +1,15 @@
+.about_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.about__left {
+    background-image: url("../../images/concert1.jpg");
+    background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 80px;
+        width: 80px;
+}

@@ -1,0 +1,56 @@
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1 {
+        font-size: 3rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+
+    p {
+        font-size: 1.5rem;
+        max-width: 600 px;
+        margin: 20px 0 30px;
+        font-weight: 600;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-delay: .3s;
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
