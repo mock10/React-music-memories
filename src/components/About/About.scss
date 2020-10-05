@@ -1,17 +1,38 @@
 @import "../../styles/variables";
 
-.about_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
+
+.about {
+    
+    width: 100vw;
+    height: 300px;
+    margin-top: 80px;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+   
 }
 
 .about__left {
-    background-image: url("../../images/concert1.jpg");
-    background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 80px;
-        width: 80px;
+    text-align: center;
+
+    h2 {
+        font-size: 4rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.about__right {
+    max-width: 460px;
+    
+
+    p {
+        font-size: 1.8rem;
+    }
 }

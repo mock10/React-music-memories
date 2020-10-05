@@ -1,21 +1,21 @@
 import React from "react";
 import './About.scss'
-import Container from "../Container/Container"
 
 const About = () => {
     return (
-
-    
-                <div className="about__content">
-                    {/* <div className= "about__left">
-
-                    </div>
-                    <div className= "about__right">
-                        <h2>Cel aplikacji</h2>
-                        <p>Pozwala na tworzenie swojej historii</p>
-                    </div> */}
-
-                </div>
+        <section className="about">
+        <div className="about__content">
+            <div className="about__left">
+                <h2>Mume</h2>
+                <p>Music Memories App</p>
+            </div>
+            <div className= "about__right">
+                <p>Aplikacja umożliwia tworzenie spersonalizowanej listy muzycznych eventów. 
+                    Zamknij oczy i przeniknij w krainę muzycznych wspomnień.  </p>
+            </div>
+                
+        </div>
+        </section>
             
 
 
