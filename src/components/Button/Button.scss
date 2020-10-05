@@ -1,7 +1,9 @@
+@import "../../styles/variables";
+
 .btn {
    
     background-color: transparent;
-    color:#FFE4C4;
+    color: $textColor;
     padding: 12px 30px;
     text-align: center;
     text-decoration: none;
@@ -22,9 +24,9 @@
 
   .btn-animated {
       animation-name: moveInBottom;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-fill-mode: backwards;
-      animation-delay: .85s;
+      animation-delay: 1.4s;
   }
 
   @keyframes moveInBottom {

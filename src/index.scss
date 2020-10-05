@@ -1,10 +1,10 @@
-//GENERIC
-@import "./generic/reset";
+//RESET
+@import "./styles/reset";
 
 // SETTINGS
-@import "./settings/variables";
+@import "./styles/variables";
 
 
 //IMPORT COMMON
 
-@import "./common";
+@import "./styles/common";

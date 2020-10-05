@@ -43,7 +43,7 @@ const Slider = (props)=> {
               key={index}
               index={index}
               activeIndex={activeIndex}
-              isActive={activeIndex==index} 
+              isActive={activeIndex === index} 
               onClick={e => goToSlide(index)}
             />
           )}
