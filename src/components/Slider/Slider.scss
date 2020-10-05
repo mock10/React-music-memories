@@ -23,7 +23,6 @@ ul {
 
 }
 
-
 .carousel__slide {
 
     display: none;
@@ -53,6 +52,7 @@ ul {
         width: 100vw;
         position: relative;
         opacity: 0.56;
+        object-fit: cover;
     }
 }
 

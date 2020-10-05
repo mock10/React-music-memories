@@ -5,6 +5,7 @@ import Slider from "../Slider/Slider"
 import images from "../../images/images"
 import About from "../About/About"
 import Heading from '../Heading/Heading';
+import Footer from "../Footer/Footer"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <Slider slides={images}/>
     <Heading/>
     <About/>
+    <Footer/>
 
 
    
