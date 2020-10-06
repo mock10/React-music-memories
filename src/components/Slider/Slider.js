@@ -24,7 +24,7 @@ const Slider = (props)=> {
         }, 8000);
         
         return () => clearInterval(interval);
-    }, [activeIndex]);
+    }, [activeIndex, props.slides.length]);
 
     return (
       <div className="carousel">

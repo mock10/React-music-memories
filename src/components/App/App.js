@@ -1,22 +1,19 @@
 import React from 'react';
-import Header from "../Header/Header"
-import "./App.scss"
-import Slider from "../Slider/Slider"
-import images from "../../images/images"
-import About from "../About/About"
-import Heading from '../Heading/Heading';
-import Footer from "../Footer/Footer"
+import { Switch, Route } from "react-router-dom";
+import "./App.scss";
+import SignIn from "../SignIn/SignIn"
+import Header from "../Header/Header";
+import HomePage from './HomePage';
+
 
 function App() {
   return (
     <>
     <Header/>
-     
-   
-    <Slider slides={images}/>
-    <Heading/>
-    <About/>
-    <Footer/>
+    <Switch>
+      <Route exact path="/" component={HomePage}/>
+      <Route path= "/signin" component={SignIn}/>
+    </Switch>
 
 
    
