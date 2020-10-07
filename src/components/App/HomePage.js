@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header"
 import Slider from "../Slider/Slider";
 import images from "../../images/images";
 import About from "../About/About";
@@ -10,7 +11,8 @@ import Footer from "../Footer/Footer";
 const HomePage = () => {
     return (
         <>
-         <Slider slides={images}/>
+        <Header/>
+        <Slider slides={images}/>
         <Heading/>
         <About/>
         <Footer/>
