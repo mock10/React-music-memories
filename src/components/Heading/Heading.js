@@ -7,7 +7,7 @@ const Heading = () => {
     <div className="heading" >
         <h1>Odkryj niezwykłą muzyczną aplikację!</h1>
         <p>Stwórz swoją mapę koncertowych wspomnień.</p>
-        <Button text="Rozpocznij"/>
+        <Button text="Rozpocznij" type="animated" color="transparent"/>
     </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SignIn.scss";
 import FormInput from "../FormInput/FormInput";
-
+import Button from "../Button/Button"
 
 
 const SignIn = () => {
@@ -44,7 +44,7 @@ const SignIn = () => {
                     handleChange={handleChange}
                     label= "Password"
                 />
-                <input type="submit" value= "Zaloguj się"></input>
+                <Button text="Zaloguj się" color="black" handleClick={handleSubmit}></Button>
             </form>
         </div>
     )

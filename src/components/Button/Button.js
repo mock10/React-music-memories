@@ -1,9 +1,12 @@
 import React from "react";
 import "./Button.scss"
 
+
+
 const Button = (props) => {
-    return <button className= "btn btn-animated">{props.text}</button>
+    const className =`btn btn--${props.color} btn--${props.type}`
+return <button onClick={props.handleClick} className= {className}>{props.text}</button>
 }
 
 
-export default Button 
+export default Button;
