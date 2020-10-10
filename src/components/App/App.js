@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Switch, Route } from "react-router-dom";
+import {
+  HashRouter,
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  NavLink,
+} from 'react-router-dom';
 import "./App.scss";
 import HomePage from './HomePage';
 import SignInSignUpPage from '../SignInSignUpPage/SignInSignUpPage';
@@ -24,10 +31,10 @@ useEffect(()=> {
 
   return (
     <>
-    <Switch>
+    <Router>
       <Route exact path="/" component={HomePage}/>
       <Route path= "/signin" component={SignInSignUpPage}/>
-    </Switch>
+    </Router>
 
 
    
