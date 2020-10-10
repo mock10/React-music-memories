@@ -1,11 +1,14 @@
 import React from "react";
 import "./Button.scss"
 
-
-
-const Button = (props) => {
-    const className =`btn btn--${props.color} btn--${props.type}`
-return <button onClick={props.handleClick} className= {className}>{props.text}</button>
+const Button = ({color, type, text, handleClick, children, ...otherProps}) => {
+    const className =`btn btn--${color} btn--${type}`
+return (
+    <button onClick={handleClick} className= {className} {...otherProps}>
+        {text}
+        {children}
+    </button>
+    )
 }
 
 

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./SignIn.scss";
 import FormInput from "../FormInput/FormInput";
-import Button from "../Button/Button"
+import Button from "../Button/Button";
+import {signInWithGoogle} from "../../Firebase/Firebase"
 
 
 const SignIn = () => {
@@ -44,7 +45,8 @@ const SignIn = () => {
                     handleChange={handleChange}
                     label= "Password"
                 />
-                <Button text="Zaloguj się" color="black" handleClick={handleSubmit}></Button>
+                <Button type="submit" text="Zaloguj się" color="black"></Button>
+                <Button onClick={signInWithGoogle} text="Zaloguj się z Google" color="black"></Button>
             </form>
         </div>
     )
