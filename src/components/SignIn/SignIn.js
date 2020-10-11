@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SignIn.scss";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
-import {signInWithGoogle} from "../../Firebase/Firebase"
+import {logOut, signInWithGoogle} from "../../Firebase/Firebase"
 
 
 const SignIn = () => {
@@ -47,6 +47,7 @@ const SignIn = () => {
                 />
                 <Button type="submit" text="Zaloguj się" color="black"></Button>
                 <Button onClick={signInWithGoogle} text="Zaloguj się z Google" color="black"></Button>
+                <Button onClick={logOut} text="Wyloguj się" color="black"></Button>
             </form>
         </div>
     )

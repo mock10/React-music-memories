@@ -11,6 +11,9 @@ import Dashboard from "../Dashboard/Dashboard";
 import { auth, createUserProfilDocument} from "../../Firebase/Firebase"
 import NotFound from '../../NotFound/NotFound';
 import "firebase/firestore";
+import SignUp from "../SignUp/SignUp";
+import Header from '../Header/Header';
+
 
 
 class App extends Component {
@@ -56,18 +59,15 @@ class App extends Component {
     return (
       <>
       <Router>
+        <Header currentUser={this.state.currentUser}></Header>
         <Switch>
         <Route exact path="/" component={HomePage}/>
         <Route path= "/signin" component={SignInSignUpPage}/>
+        <Route path= "/signup" component={SignUp}/>
         <Route path= "/dashboard" component={Dashboard}/>
         <Route component={NotFound}/>
         </Switch>
-      </Router>
-  
-  
-     
-      {/* <Slider slides={images}/> */}
-      
+        </Router> 
       </>
     );
   }

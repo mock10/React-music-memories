@@ -12,6 +12,7 @@
     position: fixed;
     top: 0px;
     padding: 0 30px;
+    font-size: 1.5rem;
 
     &__logo {
         background-image: url("./logo.jpg");
@@ -27,7 +28,7 @@
         color: $textColor;
         padding: 10px 20px;
         margin: 0 5px;
-        font-size: 1.5rem;
+        cursor: pointer;
 
         &:hover {
             border-bottom: 2px solid #FFE4C4;
@@ -37,6 +38,17 @@
     
     ul {
         display: flex;
+    }
+
+  
+    &__element {
+        cursor: pointer;
+        margin: 0 5px;
+    
+        &:hover {
+            border-bottom: 2px solid #FFE4C4;
+
+        }
     }
 
 }

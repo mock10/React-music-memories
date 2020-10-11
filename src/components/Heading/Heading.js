@@ -11,7 +11,7 @@ const Heading = () => {
     <div className="heading" >
         <h1>Odkryj niezwykłą muzyczną aplikację!</h1>
         <p>Stwórz swoją mapę koncertowych wspomnień.</p>
-        <Link to="/signin">
+        <Link to="/signup">
             <Button text="Rozpocznij" type="animated" color="transparent"/>
         </Link>
      

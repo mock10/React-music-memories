@@ -10,9 +10,9 @@ const SignInSignUpPage = () => {
     return (
         <>
         <div className="sign-in">
-        <Link to="/">
-            <Logo color="#000000"/>
-        </Link>
+            <Link to="/">
+                <Logo color="#000000"/>
+            </Link>
             <SignIn/>
             </div>
         </>
