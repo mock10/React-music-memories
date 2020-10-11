@@ -1,51 +1,78 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import {
-  HashRouter,
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
-  NavLink,
 } from 'react-router-dom';
 import "./App.scss";
 import HomePage from './HomePage';
 import SignInSignUpPage from '../SignInSignUpPage/SignInSignUpPage';
-import { auth } from "../../Firebase/Firebase"
+import Dashboard from "../Dashboard/Dashboard";
+import { auth, createUserProfilDocument} from "../../Firebase/Firebase"
 import NotFound from '../../NotFound/NotFound';
+import "firebase/firestore";
 
 
-function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+class App extends Component {
+  constructor() {
+    super();
 
-  let unsubscribeFormAuth =  null;
-
-useEffect(()=> {
-
-  unsubscribeFormAuth = auth.onAuthStateChanged(user=>{
-    setCurrentUser(user);
-    console.log(user)
-  } );
-  return () => {
-    unsubscribeFormAuth();
+    this.state = {
+      currentUser: null
+    };
   }
-},[]);
+  unsubscribeFormAuth =  null;
+  
 
-  return (
-    <>
-    <Router>
-      <Switch>
-      <Route exact path="/" component={HomePage}/>
-      <Route path= "/signin" component={SignInSignUpPage}/>
-      <Route component={NotFound}/>
-      </Switch>
-    </Router>
+  componentDidMount() {
+    this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth) {
+        const userRef = await createUserProfilDocument(userAuth);
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          },
+          () => {
+            console.log(this.state);
+          }
 
+          )
+        });
 
-   
-    {/* <Slider slides={images}/> */}
-    
-    </>
-  );
+     }
+     this.setState({currentUser: userAuth});
+ 
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFormAuth();
+  }
+
+  render() {
+    return (
+      <>
+      <Router>
+        <Switch>
+        <Route exact path="/" component={HomePage}/>
+        <Route path= "/signin" component={SignInSignUpPage}/>
+        <Route path= "/dashboard" component={Dashboard}/>
+        <Route component={NotFound}/>
+        </Switch>
+      </Router>
+  
+  
+     
+      {/* <Slider slides={images}/> */}
+      
+      </>
+    );
+  }
 }
+
+
 
 export default App;
