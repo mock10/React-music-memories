@@ -49,6 +49,13 @@ export const createUserProfilDocument = async (userAuth, additionalData) => {
 
 firebase.initializeApp(config);
 
+// export const logOut = () => {
+//     firebase.auth.signOut().then(()=> {
+//       console.log('logged out')
+//     }).catch((error) => {
+//       console.log(error.message)
+//     })
+//   }
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -56,15 +63,6 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt: "select_account"});
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
-
-export const logOut = () => {
-    auth.signOut().then(()=> {
-      console.log('logged out')
-    }).catch((error) => {
-      console.log(error.message)
-    })
-  }
-
 
 export default firebase;
 

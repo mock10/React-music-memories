@@ -16,12 +16,13 @@ const Header = (props) => {
             <nav>
                 <ul className= "navbar__options">
                     <li><Link to="/signup">Zarejestruj się</Link></li>
-                    {
+                    <li><Link to="/signin">Zaloguj się</Link></li>
+                    {/* {
                         props.currentUser? (
-                        <li className= "navbar__element" onClick={()=> logOut()}>Wyloguj się</li> 
+                        <li className= "navbar__element" onClick={logOut()}>Wyloguj się</li> 
                         ) : (
                         <li><Link to="/signin">Zaloguj się</Link></li>)
-                    }
+                    } */}
                 </ul>
             </nav>
         </div>
