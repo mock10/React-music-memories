@@ -3,6 +3,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  useHistory,
+  useLocation
 } from 'react-router-dom';
 import "./App.scss";
 import HomePage from './HomePage';
@@ -26,6 +28,7 @@ class App extends Component {
   }
   unsubscribeFormAuth =  null;
   
+  
 
   componentDidMount() {
     this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
@@ -44,10 +47,16 @@ class App extends Component {
 
           )
         });
-
      }
      this.setState({currentUser: userAuth});
  
+    });
+  }
+  componentDidUpdate() {
+    auth.onAuthStateChanged(user => {
+      if(user) {
+
+      }
     });
   }
 
@@ -57,7 +66,6 @@ class App extends Component {
 
   render() {
     return (
-      <>
       <Router>
         <Header currentUser={this.state.currentUser}></Header>
         <Switch>
@@ -67,8 +75,7 @@ class App extends Component {
         <Route path= "/dashboard" component={Dashboard}/>
         <Route component={NotFound}/>
         </Switch>
-        </Router> 
-      </>
+      </Router> 
     );
   }
 }

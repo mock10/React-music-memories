@@ -11,7 +11,6 @@ import Footer from "../Footer/Footer";
 const HomePage = () => {
     return (
         <>
-        <Header/>
         <Slider slides={images}/>
         <Heading/>
         <About/>

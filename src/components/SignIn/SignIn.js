@@ -5,8 +5,6 @@ import Button from "../Button/Button";
 import { signInWithGoogle, auth } from "../../Firebase/Firebase";
 
 
-
-
 const SignIn = () => {
     const [form, setForm] = useState({ email: "", password: "" });
 
@@ -21,7 +19,6 @@ const SignIn = () => {
         } catch (error) {
             console.log(error);
         }
-
         
     }
 
