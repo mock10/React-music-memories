@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Redirect,
   useHistory,
   useLocation
 } from 'react-router-dom';
@@ -15,22 +17,20 @@ import NotFound from '../../NotFound/NotFound';
 import "firebase/firestore";
 import SignUp from "../SignUp/SignUp";
 import Header from '../Header/Header';
+import { setCurrentUser } from "../../redux/user/user.actions"
+
 
 
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null
-    };
-  }
+  
   unsubscribeFormAuth =  null;
+  
   
   
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
         const userRef = await createUserProfilDocument(userAuth);
@@ -48,17 +48,11 @@ class App extends Component {
           )
         });
      }
-     this.setState({currentUser: userAuth});
+     setCurrentUser(userAuth);
  
     });
   }
-  componentDidUpdate() {
-    auth.onAuthStateChanged(user => {
-      if(user) {
 
-      }
-    });
-  }
 
   componentWillUnmount() {
     this.unsubscribeFormAuth();
@@ -66,13 +60,28 @@ class App extends Component {
 
   render() {
     return (
+      
       <Router>
-        <Header currentUser={this.state.currentUser}></Header>
+        <Header ></Header>
         <Switch>
         <Route exact path="/" component={HomePage}/>
-        <Route path= "/signin" component={SignInSignUpPage}/>
+        <Route exact path= "/signin"  render={() =>
+              this.props.currentUser ? (
+                <Redirect to='/dashboard' />
+              ) : (
+                <SignInSignUpPage />
+              )
+            }
+          />
         <Route path= "/signup" component={SignUp}/>
-        <Route path= "/dashboard" component={Dashboard}/>
+        <Route exact path= "/dashboard" render={() =>
+              !this.props.currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <Dashboard />
+              )
+            }
+          />
         <Route component={NotFound}/>
         </Switch>
       </Router> 
@@ -82,4 +91,15 @@ class App extends Component {
 
 
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

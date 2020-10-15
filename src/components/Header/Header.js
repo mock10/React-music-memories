@@ -1,28 +1,28 @@
 import React from "react";
+import { connect } from 'react-redux';
 import "./Header.scss";
 import {
     Link
   } from 'react-router-dom';
-import { auth } from "../../Firebase/Firebase"
 import {logOut} from "../../Firebase/Firebase"
 
 
-const Header = (props) => {
+const Header = ({currentUser}) => {
     return ( 
     <>
     <header className="header">
         <div className="navbar">
-            <img className="navbar__logo" alt=""></img>
+            <img className= "navbar__logo"></img>
             <nav>
                 <ul className= "navbar__options">
                     
                     {
-                        props.currentUser? (
+                        currentUser? (
                         <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> 
                         ) : (
                             <>
                                 <li><Link to="/signup">Zarejestruj się</Link></li>
-                                 <li><Link to="/signin">Zaloguj się</Link></li>
+                                <li><Link to="/signin">Zaloguj się</Link></li>
                             </>
                         )        
                     }
@@ -34,4 +34,8 @@ const Header = (props) => {
 )
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+  });
+  
+  export default connect(mapStateToProps)(Header);

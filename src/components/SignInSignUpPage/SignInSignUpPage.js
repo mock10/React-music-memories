@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }from "react";
 import SignIn from "../SignIn/SignIn";
 import "./SignInSignUpPage.scss";
 import Logo from "../Logo/Logo";
@@ -7,6 +7,8 @@ import {
   } from 'react-router-dom';
 
 const SignInSignUpPage = () => {
+;
+
     return (
         <>
         <div className="sign-in">
