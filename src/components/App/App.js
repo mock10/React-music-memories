@@ -5,12 +5,10 @@ import {
   Route,
   Switch,
   Redirect,
-  useHistory,
-  useLocation
 } from 'react-router-dom';
 import "./App.scss";
 import HomePage from './HomePage';
-import SignInSignUpPage from '../SignInSignUpPage/SignInSignUpPage';
+import SignInSignUpPage from '../SignInSignUpPage/SignInPage';
 import Dashboard from "../Dashboard/Dashboard";
 import { auth, createUserProfilDocument} from "../../Firebase/Firebase"
 import NotFound from '../../NotFound/NotFound';
@@ -21,14 +19,10 @@ import { setCurrentUser } from "../../redux/user/user.actions"
 
 
 
-
 class App extends Component {
   
   unsubscribeFormAuth =  null;
   
-  
-  
-
   componentDidMount() {
     const { setCurrentUser } = this.props;
     this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
@@ -52,7 +46,6 @@ class App extends Component {
  
     });
   }
-
 
   componentWillUnmount() {
     this.unsubscribeFormAuth();
@@ -90,8 +83,6 @@ class App extends Component {
     );
   }
 }
-
-
 
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser

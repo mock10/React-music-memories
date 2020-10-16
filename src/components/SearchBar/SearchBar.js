@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SearchBar.scss"
 import FormInput from "../FormInput/FormInput";
-const KEY = "tsF65YcYw8nMLp7Z";
-const fetchURL = "https://api.songkick.com/api/3.0/events.json?apikey=tsF65YcYw8nMLp7Z&";
 
 const SearchBar = (props) => {
     const [term, setTerm] = useState("");

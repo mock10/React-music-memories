@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header/Header"
 import Slider from "../Slider/Slider";
 import images from "../../images/images";
 import About from "../About/About";

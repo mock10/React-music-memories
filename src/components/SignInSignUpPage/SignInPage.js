@@ -1,12 +1,12 @@
-import React, { useEffect }from "react";
+import React from "react";
 import SignIn from "../SignIn/SignIn";
-import "./SignInSignUpPage.scss";
+import "./SignInPage.scss";
 import Logo from "../Logo/Logo";
 import {
     Link
   } from 'react-router-dom';
 
-const SignInSignUpPage = () => {
+const SignInPage = () => {
 ;
 
     return (
@@ -22,4 +22,4 @@ const SignInSignUpPage = () => {
 }
 
 
-export default SignInSignUpPage;
+export default SignInPage;
