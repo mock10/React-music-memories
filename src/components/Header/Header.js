@@ -14,8 +14,7 @@ const Header = ({currentUser}) => {
         <div className="navbar">
             <img className= "navbar__logo"></img>
             <nav>
-                <ul className= "navbar__options">
-                    
+                <ul className= "navbar__options">              
                     {
                         currentUser? (
                         <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> 

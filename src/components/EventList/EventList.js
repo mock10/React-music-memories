@@ -3,18 +3,21 @@ import EventElement from "../EventElement/EventElement";
 import "./EventList.scss"
 
 const EventList = ({events}) => {
-    const renderedList = events.map((event, id)=> {
-        return <EventElement event= {event} key= {event.id}/>
-
-    });
-
-    return (
-        <div className="work">
-    <div className="event-list">{renderedList}</div>
+    let renderList;
+    if(events) {
+       renderList= events.map((event, id)=> {
+            return <EventElement event= {event} key= {event.id}/>
     
-    </div>
-    )
+        });
 
+    } else {
+        renderList= "Brak eventów"
+    }
+    return (
+        <div className="events">
+            <div className="events__list">{renderList}</div>
+        </div>
+    )
 }
 
 export default EventList;

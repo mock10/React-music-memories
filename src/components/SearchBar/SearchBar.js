@@ -8,30 +8,30 @@ const SearchBar = (props) => {
     const [term, setTerm] = useState("");
 
     const handleChange = (e) => {
-        console.log(term)
         setTerm(e.target.value);
     };
     const handleSubmit = (e) => {
         e.preventDefault();
         props.onTermSubmit(term);
     }
-    useEffect(()=>{
-        
-       ;
-    });
     
     return (
+        <>
         <div className="searchbar">
+        <div className= "title">Wyszukiwarka koncertów </div>
+        <div className="searchbar__content">
             <form onSubmit ={handleSubmit}>
                 <FormInput
                     type= "text"
                     name= "term"
                     value= {term}
                     onChange={handleChange}
-                    label= "Find your event"
+                    label= "Wpisz nazwę artysty lub zespołu"
                 />
             </form>
         </div>
+        </div>
+        </>
     )
 
 }

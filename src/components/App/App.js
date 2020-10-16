@@ -82,6 +82,8 @@ class App extends Component {
               )
             }
           />
+          <Route path="/dashboard" component={Dashboard}/>
+
         <Route component={NotFound}/>
         </Switch>
       </Router> 

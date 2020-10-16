@@ -1,3 +1,13 @@
-.searchbar {
-    margin-top: 200px;
+.searchbar{
+
+    text-align: center;
+    &__content {
+        margin-top: 100px;
+    }
+    .title {
+        color: black;
+        margin-top: 60px;
+        font-size: 2rem;
+        font-weight: 600;
+    }
 }
