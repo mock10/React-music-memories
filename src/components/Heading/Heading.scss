@@ -15,6 +15,10 @@
         animation-name: moveInLeft;
         animation-duration: 2s;
         animation-delay: .5s;
+
+        @media (max-width: 600px) {
+            font-size: 1.8rem;
+        }
     }
 
     p {
@@ -25,6 +29,10 @@
         animation-name: moveInRight;
         animation-duration: 2s;
         animation-delay: .5s;
+
+        @media (max-width: 600px) {
+            font-size: 1rem;
+        }
     }
 }
 

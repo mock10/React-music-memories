@@ -16,18 +16,18 @@ const SearchBar = (props) => {
     return (
         <>
         <div className="searchbar">
-        <div className= "title">Wyszukiwarka koncertów </div>
-        <div className="searchbar__content">
-            <form onSubmit ={handleSubmit}>
-                <FormInput
-                    type= "text"
-                    name= "term"
-                    value= {term}
-                    onChange={handleChange}
-                    label= "Wpisz nazwę artysty lub zespołu"
-                />
-            </form>
-        </div>
+            <div className= "title">Wyszukiwarka koncertów </div>
+            <div className="searchbar__content">
+                <form onSubmit ={handleSubmit}>
+                    <FormInput
+                        type= "text"
+                        name= "term"
+                        value= {term}
+                        onChange={handleChange}
+                        label= "Wpisz nazwę artysty lub zespołu"
+                    />
+                </form>
+            </div>
         </div>
         </>
     )

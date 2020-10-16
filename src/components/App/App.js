@@ -7,7 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import "./App.scss";
-import HomePage from './HomePage';
+import HomePage from '../HomePage/HomePage';
 import SignInSignUpPage from '../SignInSignUpPage/SignInPage';
 import Dashboard from "../Dashboard/Dashboard";
 import { auth, createUserProfilDocument} from "../../Firebase/Firebase"

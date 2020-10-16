@@ -8,6 +8,8 @@ import {logOut} from "../../Firebase/Firebase"
 
 
 const Header = ({currentUser}) => {
+    
+   
     return ( 
     <>
     <header className="header">
@@ -17,7 +19,11 @@ const Header = ({currentUser}) => {
                 <ul className= "navbar__options">              
                     {
                         currentUser? (
-                        <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> 
+        
+                        <>
+                            <li><Link to="/dashboard">{currentUser.displayName.split(' ').slice(0, -1).join(' ')}</Link></li>
+                            <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> 
+                        </>
                         ) : (
                             <>
                                 <li><Link to="/signup">Zarejestruj się</Link></li>
@@ -30,11 +36,15 @@ const Header = ({currentUser}) => {
         </div>
     </header>
     </>
+    
 )
+
 }
 
 const mapStateToProps = state => ({
     currentUser: state.user.currentUser
   });
+
+
   
-  export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Header);
