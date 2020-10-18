@@ -1,11 +1,11 @@
 @import "../../styles/variables";
 
 .dashboard__heading {
+    width:100%;
     background-image: url("../../images/concert8.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 80vh;
-    width: 100vw;
     background-position: center;
     align-items: center;
     color: $textColor;
@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    z-index: 2;
     
 
     &__content {
@@ -27,6 +28,5 @@
         text-align: center;
         font-size: 1.4rem;
         font-weight: 600;
-
     }
 }

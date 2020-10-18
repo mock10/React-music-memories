@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from 'react-redux';
 import "./Header.scss";
 import {
     Link
@@ -9,7 +8,10 @@ import {logOut} from "../../Firebase/Firebase"
 
 const Header = ({currentUser}) => {
     
-   
+    const handleLogout = ()=>{
+        window.location = "/";
+        logOut();
+    }
     return ( 
     <>
     <header className="header">
@@ -21,8 +23,9 @@ const Header = ({currentUser}) => {
                         currentUser? (
         
                         <>
-                            <li><Link to="/dashboard">{currentUser.displayName.split(' ').slice(0, -1).join(' ')}</Link></li>
-                            <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> 
+                            <li><Link to="/dashboard">{currentUser&&currentUser.displayName.split(' ')[0]}</Link></li>
+                            {/* <li className= "navbar__element" onClick={logOut}>Wyloguj się</li> */}
+                            <li onClick={handleLogout} ><Link to="/"> Wyloguj się</Link></li> 
                         </>
                         ) : (
                             <>
@@ -41,10 +44,4 @@ const Header = ({currentUser}) => {
 
 }
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
-  });
-
-
-  
-export default connect(mapStateToProps)(Header);
+export default Header;

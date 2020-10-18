@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import EventList from "../EventList/EventList";
-import DashboardHeading from "../DashboardHeading/DashboardHeading"
-import "./Dashboard.scss"
+import DashboardHeading from "../DashboardHeading/DashboardHeading";
+import "./Dashboard.scss";
+import Footer from "../Footer/Footer";
+// import DashboardNav from "../DashboardNav/DashboardNav";
 
 
 const fetchURL = "https://api.songkick.com/api/3.0/events.json?apikey=tsF65YcYw8nMLp7Z";
@@ -26,13 +28,13 @@ const Dashboard = () => {
         .catch(error => console.log(error) );
     }
     
-    console.log(events)
 
     return (
         <>
         <DashboardHeading/>
         <SearchBar onTermSubmit={onTermSubmit}/>
         <EventList events={events}/>
+        <Footer></Footer>
         </>
     )
 

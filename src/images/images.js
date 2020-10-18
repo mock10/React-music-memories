@@ -7,4 +7,4 @@ import concert8 from "./concert8.jpg"
 
 const images = [concert1, concert2, concert3, concert4, concert8];
 
-export default images
+export default images;

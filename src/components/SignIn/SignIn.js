@@ -9,15 +9,21 @@ const SignIn = () => {
     const [form, setForm] = useState({ email: "", password: "" });
 
     const handleSubmit = async (e) => {
-        e.preventDefeult();
+        e.preventDefault();
 
         const{ email, password } = form;
 
         try {
-            await auth.signInWithEmailAndPassword(email, password);
-            setForm({email:"", password: ""});
+            await auth.signInWithEmailAndPassword(email, password).then((resp)=>{
+                // console.log(resp.user.uid);
+                localStorage.setItem("uid",resp.user.uid)
+                setForm({email:"", password: ""});
+                window.location = "/dashboard"
+            });
+            
         } catch (error) {
             console.log(error);
+            setForm({email:"", password: ""});
         }
         
     }
@@ -32,6 +38,7 @@ const SignIn = () => {
             };
         });
     };
+    
 
     return (
         <div className="sign-in__content">
@@ -61,6 +68,8 @@ const SignIn = () => {
     )
 
 }
+
+
 
 
 export default SignIn;

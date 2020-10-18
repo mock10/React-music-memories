@@ -26,9 +26,11 @@ const SignUp = () => {
             const {user} = await auth.createUserWithEmailAndPassword(email, password);
             
 
-            await createUserProfilDocument(user, {displayName});
+            await createUserProfilDocument(user, {displayName}).then(()=>{
+                window.location = "/signin"
+            });
 
-            setForm({displayName: "", email: "", password: "", confirmPassword: ""});
+            // setForm({displayName: "", email: "", password: "", confirmPassword: ""});
 
 
         } catch(error) {
